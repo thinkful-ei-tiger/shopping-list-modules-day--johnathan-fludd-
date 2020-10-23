@@ -1,24 +1,16 @@
-export default { validateName, create }
-// const foo = 'bar';
+const validateName = function(name) {
+  if (!name) throw new TypeError('Name must not be blank');
+};
 
-
-let
-function validateName(name) {
-
-    if (name === null || undefined) {
-
-        throw new TypeError("Name must not be blank");
-
-
-    }
-
-
-}
-
-
-
-const create(name) = {
+const create = function(name) {
+  return {
     id: cuid(),
-    name: name,
+    name,
     checked: false
+  };
+};
+
+export default {
+  validateName,
+  create
 };
